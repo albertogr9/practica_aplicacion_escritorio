@@ -3,7 +3,7 @@ package java25arraysYcolecciones;
 import java.util.ArrayList;
 
 public class Principal {
-
+//nuevo comentario de codigo
 	public static void main(String[] args) {
 		// un array no es mas que un conjunto de objetos del mismo tipo, tienen
 		// un tamaño fijo y no se puede redimensionar
