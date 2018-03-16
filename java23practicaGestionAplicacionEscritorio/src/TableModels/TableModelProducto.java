@@ -33,6 +33,10 @@ public class TableModelProducto extends AbstractTableModel {
 		return columnas.length;
 	}
 
+	public String getColumnName(int columnIndex) {
+		return columnas[columnIndex];
+	}
+
 	public Object getValueAt(int indiceFila, int indiceColumna) {
 		return datos[indiceFila][indiceColumna];
 	}

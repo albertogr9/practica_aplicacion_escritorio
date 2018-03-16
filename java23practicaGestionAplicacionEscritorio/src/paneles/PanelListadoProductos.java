@@ -32,7 +32,7 @@ public class PanelListadoProductos extends JPanel implements ActionListener {
 		this.productos = daoProductos.obtenerProducto();
 		tabla = new JTable(new TableModelProducto(productos));
 		removeAll();
-		// en vez de agregar tabla agregar la JScrollBar
+
 		tabla.setPreferredScrollableViewportSize(new Dimension(700, 500));
 		tabla.setFillsViewportHeight(true);
 		tabla.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -51,7 +51,8 @@ public class PanelListadoProductos extends JPanel implements ActionListener {
 		// por si tanto no se selecciona una fila como si pulso el boton
 		// repetidas veces
 		if (tabla.getSelectedRow() == -1) {
-			return; // aunque la funcion no devuelva nada, puedes llamar a return
+			return; // aunque la funcion no devuelva nada, puedes llamar a
+					// return
 			// directamente para decir que finaliza la funcion
 		}
 		JOptionPane.showMessageDialog(null,

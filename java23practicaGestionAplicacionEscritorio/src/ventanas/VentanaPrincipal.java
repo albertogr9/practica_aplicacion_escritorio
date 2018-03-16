@@ -57,6 +57,7 @@ public class VentanaPrincipal extends JFrame implements ActionListener {
 		} else if (e.getActionCommand().equals("Listar producto")) {
 			setContentPane(panelListadoProductos);
 			panelListadoProductos.refrescarProductos();
+			
 		}
 		SwingUtilities.updateComponentTreeUI(this);
 	}

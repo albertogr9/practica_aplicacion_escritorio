@@ -113,6 +113,15 @@ public class PanelRegistroProducto extends JPanel implements ActionListener {
 		ProductoDAOImpl ProductoDAO = new ProductoDAOImpl();
 		ProductoDAO.registrarProducto(productoAregistrar);
 		JOptionPane.showMessageDialog(null, "PRODUCTO REGISTRADO");
+		
+		//limpio los campos despues de registar el producto
+		campoModelo.setText("");
+		campoMarca.setText("");
+		campoDiscoDuro.setText("");
+		campoRam.setText("");
+		campoProcesador.setText("");
+		campoPantalla.setText("");
+		campoPeso.setText("");
 	}
 
 } // end class
