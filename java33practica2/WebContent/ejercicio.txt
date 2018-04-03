@@ -1,0 +1,16 @@
+para que los anuncios se puedan borrar en la parte de administracion
+
+completar la parte de gestion de usuario para realizar un listado de usuario 
+registrados y permitir a un administrador que los pueda borrar
+
+nota:usar jstl en los listado
+
+opcionales: incluir validaciones de javascript para el registro tanto de usuarios cmo de anuncios
+
+permitir modificar informaciones en los listados de la zona de administracion
+
+
+----INCLUIR VALIDACIONES DE JAVASCRIPT PARA EL REGISTRO TANTO DE USUARIOS COMO 
+DE ANUNCIOS
+---INCLUIR VALIDACIOM EM EL LADO DEL SERVIDOR
+A LA HORA DE REGISTRAR ANUNCIOS 
