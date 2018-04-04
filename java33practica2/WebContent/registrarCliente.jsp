@@ -5,13 +5,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<script src="js/validacion.js"></script>
 </head>
 <body>
 <div style="color: red">${mensaje}</div>
 <jsp:include page="menu.jsp"></jsp:include>
 	<br> Introduce los datos:
 	<br>
-	<form action="ServletRegistroCliente" method="post">
+	<form name="formCliente" action="ServletRegistroCliente" method="post" onsubmit="return validacion()"><br>
 		nombre: <input type="text" name="campoNombre" required /><br> 
 		calle:<input type="text" name="campoCalle" /><br>
 		numero: <input type="text" name="campoNumero" /><br>
@@ -22,6 +23,8 @@
 		particularEmpresa: <input type="text" name="campoParticularEmpresa" /><br>
 		 <input type="submit"
 			value="ACEPTAR" />
+			
 	</form>
+	<script type="text/javascript" src="js/validacion.js"></script>
 </body>
 </html>

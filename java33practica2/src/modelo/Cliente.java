@@ -11,11 +11,6 @@ public class Cliente {
 	private String particularEmpresa;
 	private int id;
 
-/*	public Cliente(String nombre, String calle, String numero,
-			String codigoPostal, String poblacion, String telefono,
-			String email, String particularEmpresa) {
-	}*/
-
 	public Cliente(String nombre, String calle, String numero,
 			String codigoPostal, String poblacion, String telefono,
 			String email, String particularEmpresa) {

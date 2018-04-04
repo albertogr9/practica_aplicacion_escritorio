@@ -21,8 +21,6 @@ public class ServletRegistroCliente extends HttpServlet {
 	protected void service(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("se ejecuta el post del ServletRegistroCliente");
-		// recoger lo que ha introducido el usuario en el formulario:
-		// campoTitulo es el name del input del que quiero coger la informacion
 		String nombre = request.getParameter("campoNombre");
 		String calle = request.getParameter("campoCalle");
 		String numero = request.getParameter("campoNumero");
@@ -33,10 +31,15 @@ public class ServletRegistroCliente extends HttpServlet {
 		String particularEmpresa = request
 				.getParameter("campoParticularEmpresa");
 		
-		String expresionRegularNombre = "[a-zA-Z·ÈÌÛ˙¡…Õ”⁄Ò—\\s]{3,10}";
+		String expresionRegularNombre = "[a-zA-Z·ÈÌÛ˙¡…Õ”⁄Ò—\\s]{3,15}";
+		String expresionRegularNumero = "[0-9]{1,15}";
+		String expresionRegularCodigoPostal = "[0-9]{1,5}";
+		String expresionRegularEmail = "[^@]+@[^@]+\\.[a-zA-Z]{2,}";
+		
+		
 		Pattern pattern = Pattern.compile(expresionRegularNombre);
 		Matcher matcher = pattern.matcher(nombre);
-		
+
 		if (matcher.matches()) {
 			System.out.println("nombre ok");
 		} else {
@@ -44,8 +47,49 @@ public class ServletRegistroCliente extends HttpServlet {
 			request.setAttribute("mensaje", "nombre no valido");
 			request.getRequestDispatcher("registrarCliente.jsp").forward(
 					request, response);
+			return
+			;
+		}
+		
+		Pattern patternNum = Pattern.compile(expresionRegularNumero);
+		Matcher matcherNum = patternNum.matcher(numero);
+
+		if (matcherNum.matches()) {
+			System.out.println("numero ok");
+		} else {
+			System.out.println("numero no valido");
+			request.setAttribute("mensaje", "numero no valido");
+			request.getRequestDispatcher("registrarCliente.jsp").forward(
+					request, response);
 			return;
 		}
+		Pattern patternCp = Pattern.compile(expresionRegularCodigoPostal);
+		Matcher matcherCp = patternCp.matcher(codigoPostal);
+
+		if (matcherCp.matches()) {
+			System.out.println("cp ok");
+		} else {
+			System.out.println("cp no valido");
+			request.setAttribute("mensaje", "cp no valido");
+			request.getRequestDispatcher("registrarCliente.jsp").forward(
+					request, response);
+			return;
+		}
+		
+		Pattern patternEmail = Pattern.compile(expresionRegularEmail);
+		Matcher matcherEmail = patternEmail.matcher(email);
+
+		if (matcherEmail.matches()) {
+			System.out.println("email ok");
+		} else {
+			System.out.println("email no valido");
+			request.setAttribute("mensaje", "email no valido");
+			request.getRequestDispatcher("registrarCliente.jsp").forward(
+					request, response);
+			return;
+		}
+		
+		
 		Cliente nuevoCliente = new Cliente(nombre, calle, numero, codigoPostal,
 				poblacion, telefono, email, particularEmpresa);
 		System.out.println("vamos a registrar: " + nuevoCliente.toString());
