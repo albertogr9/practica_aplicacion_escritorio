@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>ENTRADA ARTICULOS</title>
+		<meta charset="utf-8">
+		  <link rel="stylesheet" href="css\styles.css">
+     <script type = "text/javascript" src ="js/javascript.js"></script>
+	</head>
+	
+	<body>
+	<div>
+		<h1>Formulario</h1>
+		<form onsubmit = "">
+			
+			<div>
+				<label for="numero">NUMERO DE ARTICULO</label></br>
+				<input type="text" size="30" id="numero" name = "numero">
+			</div>
+			<div>
+			<label for="proveedor">PROVEEDOR/MARCA:</label></br>
+			<select id="proveedor" name="proveedor" style="width:150px">
+					<option id="adidas">Adidas</option>
+					<option id="asics">Asics</option>
+					<option id="nike">Nike</option>
+					<option id="puma">Puma</option>
+					<option id="reebok">Reebok</option>
+			</select>
+			</div>
+			<div>
+				<label for="precio">PRECIO</label></br>
+				<input type="number" size="6" id="precio" name = "precio">
+			</div>
+			<div>
+				<label for="descripcion">DESCRIPCION</label></br>
+				<input type="text" size="30" id="descripcion" name = "descripcion">
+			</div>
+			<div>
+				<label for="fechaentrada">FECHA DE ENTRADA</label></div></br>
+				<input id="fechaentrada" name = "fechaentrada" style="margin:20px" type="date">
+			</div>
+			
+		</form>
+			<div>
+				<button onclick="agregaFila();">AÑADIR</button>
+				<button onclick="editaFila();">Editar</button>
+                <button onclick="borraFila();">Borrar</button>
+			</div>
+	<div>
+		<h2>Articulos introducidos</h2>	
+		<table id = "tabla">
+				<tr>
+					<th>NUMERO ARTICULO</th>
+					<th>PROVEEDOR/MARCA</th>
+					<th>PRECIO</th>
+					<th>DESCRIPCION</th>
+					<th>FECHA DE ENTRADA</th>
+				</tr>	
+		</table>
+	</div>
+
+	</body>
+	<script type = "text/javascript" src ="js/javascript.js"></script>
+</html>
